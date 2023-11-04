@@ -12,8 +12,10 @@ body {
   justify-content: center;
   align-items: center;
   background-color: #0d0a1a;
-  -webkit-tap-highlight-color: transparent;
 }
+ body {
+    -webkit-tap-highlight-color: transparent;
+  }
 html {
   font-size: 62.5%;
 }
