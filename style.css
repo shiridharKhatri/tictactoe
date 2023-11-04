@@ -1,0 +1,121 @@
+@import url("https://fonts.googleapis.com/css2?family=Belanosima:wght@600&display=swap");
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+body {
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #0d0a1a;
+}
+html {
+  font-size: 62.5%;
+}
+.container {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: radial-gradient(
+    50% 50% at 50% 50%,
+    rgba(82, 57, 233, 0.1) 0,
+    rgba(147, 115, 238, 0) 100%
+  );
+}
+.screen{
+    /* background-color: red; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+   margin-bottom: 5rem;
+}
+.screen img{
+    height: 5rem;
+    width: 5rem;
+}
+.screen .turn{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin: 1rem;
+    background-color: #445;
+    padding: 1.5rem 1rem;
+    width: 11rem;
+    border-radius: 1.5rem;
+}
+.screen .turn h2{
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    color: #f5f5f5;
+    font-family: "Belanosima", sans-serif;
+}
+.container .box {
+  background: linear-gradient(
+      117.75deg,
+      rgba(59, 51, 102, 0) 32.76%,
+      rgba(59, 51, 102, 0.5) 100%
+    ),
+    linear-gradient(
+      117.75deg,
+      rgba(59, 51, 102, 0.5) 0%,
+      rgba(36, 36, 77, 0) 67.24%,
+      rgba(43, 36, 77, 0) 67.24%
+    );
+  padding: 0.1rem;
+  border-radius: 2.2rem;
+
+  /* border: 0.2rem solid RGB(0, 255, 0);
+  -webkit-box-shadow: 0px 0px 83px 0px RGB(0, 255, 0);
+  -moz-box-shadow: 0px 0px 83px 0px RGB(0, 255, 0);
+  box-shadow:0px 0px 83px 0px RGB(0, 255, 0); */
+}
+
+/* border: 0.2rem solid #edd349;
+-webkit-box-shadow: 0px 0px 96px 1px #edd349;
+-moz-box-shadow: 0px 0px 96px 1px #edd349;
+box-shadow: 0px 0px 96px 1px #edd349; */
+
+.container .box_two {
+  padding: 1rem;
+  height: 100%;
+  width: 100%;
+  background: rgba(17, 14, 36, 0.8);
+  border-radius: 2.2rem;
+}
+.container .row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.container button {
+  padding: 1rem;
+  margin: 0.5rem;
+  font-size: 4rem;
+  height: 10rem;
+  width: 10rem;
+  border-radius: 2rem;
+  /* border: none; */
+  cursor: pointer;
+  background-color: transparent;
+  border: 0.1rem solid #445;
+  transition: 0.2s ease;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  color: #f5f5f5;
+}
+.container button img{
+    padding: 1rem;
+}
+.container button:hover {
+ background-color: #445;
+}
