@@ -13,6 +13,9 @@ body {
   align-items: center;
   background-color: #0d0a1a;
 }
+ body {
+    -webkit-tap-highlight-color: transparent;
+  }
 html {
   font-size: 62.5%;
 }
