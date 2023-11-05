@@ -8,6 +8,11 @@ let x = document.querySelector(".x");
 let y = document.querySelector(".y");
 let click = new Audio("./click.mp3");
 let win = new Audio("./new-level-142995.mp3");
+let redScore = Number(localStorage.getItem("X"));
+let yellowScore = Number(localStorage.getItem("Y"));;
+let screenX = document.getElementById("scoreX");
+let screenY = document.getElementById("scoreY");
+let playAgainBtn = document.querySelector(".playAgain")
 let changeTurn = () => {
   return turn === cross ? circle : cross;
 };
@@ -29,6 +34,16 @@ function disableAllButtons() {
     btn.disabled = true;
   });
 }
+const restart = ()=>{
+  localStorage.removeItem("X")
+  localStorage.removeItem("Y")
+  location.reload()
+}
+ playAgainBtn.addEventListener("click", ()=>{
+  location.reload()
+ })
+document.getElementById("scoreX").innerHTML = `<span>${redScore}</span>`;
+  document.getElementById("scoreY").innerHTML = `<span>${yellowScore}</span>`;
 btns.forEach((btn, index) => {
   btn.addEventListener("click", (e) => {
     click.play();
@@ -53,6 +68,9 @@ btns.forEach((btn, index) => {
       }
       if (checkWinner(moves, turn)) {
         if (turn === cross) {
+          let scoreAddedX = document.querySelector(".scoreAddedX");
+          redScore += 1;
+          localStorage.setItem("X", redScore);
           disableAllButtons();
           win.play();
           x.style.background = "#e92331";
@@ -69,9 +87,21 @@ btns.forEach((btn, index) => {
           box.style.boxShadow = "0px 0px 83px 0px #e92331";
           let winningBtn = getWinningButtons();
           winningBtn.forEach((e) => {
-           e.style.background = "#e92331"
+            e.style.background = "#e92331";
           });
+          scoreAddedX.style.opacity = "1";
+          scoreAddedX.style.top = "2.7rem";
+          screenX.innerHTML = `<span>${redScore}</span>`;
+          playAgainBtn.style.opacity = "1"
+          setTimeout(() => {
+            scoreAddedX.style.top = "0";
+            scoreAddedX.style.opacity = "0";
+          }, 2000);
+
         } else {
+          let scoreAddedY = document.querySelector(".scoreAddedY");
+          yellowScore += 1;
+          localStorage.setItem("Y", yellowScore);
           disableAllButtons();
           win.play();
           y.style.background = "#edd349";
@@ -87,8 +117,16 @@ btns.forEach((btn, index) => {
           box.style.boxShadow = "0px 0px 83px 0px #edd349";
           let winningBtn = getWinningButtons();
           winningBtn.forEach((e) => {
-            e.style.background = "#edd349"
+            e.style.background = "#edd349";
           });
+          scoreAddedY.style.opacity = "1";
+          scoreAddedY.style.top = " 2.7rem";
+          screenY.innerHTML = `<span>${yellowScore}</span>`;
+          playAgainBtn.style.opacity = "1"
+          setTimeout(() => {
+            scoreAddedY.style.top = "0";
+            scoreAddedY.style.opacity = "0";
+          }, 2000);
         }
       }
       turn = changeTurn();
