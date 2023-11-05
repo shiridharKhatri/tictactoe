@@ -96,7 +96,7 @@ html {
   border-radius: 1rem;
   color: #ffffff;
   cursor: pointer;
-  opacity: 0;
+  /* opacity: 0; */
   transition: 0.2s ease;
 }
 .playAgain h3{
